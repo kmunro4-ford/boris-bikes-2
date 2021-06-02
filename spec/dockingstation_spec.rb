@@ -17,4 +17,13 @@ describe DockingStation do
     expect(test2).to be_truthy()
   end
 
+  it 'responds to docking the bike (dock_bike)' do
+    expect(subject).to respond_to(:dock_bike)
+  end
+
+  it 'stores the bike in an array' do
+    expect(subject.dock_bike).not_to be_empty
+  end
+
+
 end
