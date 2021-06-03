@@ -3,10 +3,10 @@ require 'dockingstation'
 describe DockingStation do
 
   describe "#release_bike" do
-    it 'releases a bike' do
+    it 'informs the user no bike is docked' do
       bike = Bike.new
-      subject.dock_bike(bike)
-      expect(subject.release_bike).to eq(bike)
+      test = subject.release_bike
+      expect(subject.release_bike).to eq ("There are no docked bikes")
     end
   end
 
@@ -26,7 +26,8 @@ describe DockingStation do
   end
 
   it 'stores the bike in an array' do
-    expect(subject.dock_bike).not_to be_empty
+    bike = Bike.new
+    expect(subject.dock_bike(bike)).not_to be_empty
   end
 
 
