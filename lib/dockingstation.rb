@@ -27,6 +27,3 @@ class Bike
   def working?
   end
 end
-
-# a = DockingStation.new
-# a.release_bike
