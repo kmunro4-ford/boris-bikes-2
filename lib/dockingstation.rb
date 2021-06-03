@@ -4,21 +4,20 @@ class DockingStation
   attr_reader :bike, :docked_bikes
 
   def initialize
-    # @bike = Bike.new
-    @docked_bikes = []
+    @bike = Bike.new
+    @docked_bikes = Array.new
   end
 
   def release_bike
-    return "There are no docked bikes" unless @docked_bikes.nil?
-
-    return @docked_bikes
-    # do something great
-    # raise 'An error has occured'
-    # raise RuntimeError, "valid error" unless @bike != nil
+    temp_total = []
+    return "There are no docked bikes" unless @docked_bikes.count > 0
+    @docked_bikes.each do |c|
+      return c
+    end
+    return temp_total
   end
 
   def dock_bike(bike)
-    # docked_bikes = []
     @docked_bikes << @bike
   end
 

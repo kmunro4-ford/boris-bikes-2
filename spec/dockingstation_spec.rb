@@ -9,9 +9,18 @@ describe DockingStation do
       expect(subject.release_bike).to eq ("There are no docked bikes")
     end
   end
+  # test.should equal?(bike)
 
-  it 'creates a bike object' do
-    expect(subject.release_bike).to respond_to(:working?)
+  describe "#release_bike" do
+    it 'can release a docked bike' do
+      biker = Bike.new
+      subject.dock_bike(biker)
+      released_bike = subject.release_bike
+      # test = subject.release_bike
+      released_bike.should equal?(biker)
+      p released_bike
+      p biker
+    end
   end
 
   # really not needed test
